@@ -113,18 +113,11 @@ Raw Data In
 
 ---
 
-## Common Big Data Architecture Terms
+## Big Data Storage
 
 Beyond the Medallion Architecture, there are several other terms and concepts you'll commonly encounter in big data systems:
 
-| Term | Description |
-|------|-------------|
-| **Data Ingestion** | The process of importing and loading raw data from various sources into your big data system. |
-| **Staging Area** | A temporary holding zone where data lands before it is validated or moved to its final destination. |
-| **Data Warehouse Layer** | The core storage and processing layer — the heart of your data architecture. |
-| **Data Mart Layer** | Department-specific subsets of a data warehouse, tailored to the needs of a specific team (e.g., marketing, finance). |
-| **Metadata Layer** | A layer that stores information *about* your data — schemas, lineage, definitions, and data cataloging. |
-
+a
 ---
 
 ## 🚀 What's Next?
