@@ -33,11 +33,13 @@ Golden layer is a layer you would put your very cleaned data in. Think of it as 
 Example : 
 
 Now that we already know the layers of data , we can move to some other terms that are very common in big data. Like the architecture , please see the content below.
-1. Data Warehouse
-Data warehouse is basically a system where you'd store OLAP 
+1. Data Ingestion
 
-2. Data Lakehouse
-
-
-3. Datamart
+2. Staging Area
+ 
+3. Data Warehouse Layer ( Storage - Core )
+  
+4. Data Mart Layer ( Department Data )
+  
+5. Metadata Layer ( ) 
  
