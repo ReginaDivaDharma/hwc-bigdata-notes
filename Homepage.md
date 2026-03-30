@@ -1,45 +1,139 @@
-## Introduction
-This is a repository if you want to learn the basics of big data, and huawei's big data in general. Since there are many big data services let's start with the basics and go to the details along the way.
-First of all , what is big data ? big data itself can be understood as many things, but if you want the simple answer , you could just refer to it's name. It's called big data because it is a collection of many data in one space. 
-Sometimes when you have such large amount of value , your database cannot keep or - either that your wallet , you might ask yourself, how do i try to maximize my performance ? or how do i make this database handle this large amount with a short time ?
+# 📦 Big Data Fundamentals
+> A beginner-friendly guide to understanding big data concepts and Huawei's big data ecosystem.
 
-That's where your big data tool comes from! It is basically a tool that that will help you process your data with good performance, instead of the old database!
+---
 
-Now how do we differentiate which one is considered normal data ? which one should we consider using big data tool ? to be honest i'd like to answer this question , by following what your company currently needs. But you can refer to the key characteristics
-of big data (5Vs) , please find the characteristics below : 
+## 📖 Table of Contents
 
-1. Volume : the size of amount of data, usually data around terabytes to petabytes are considered as big data because it exceeds the traditional storage setup
-2. Velocity : The speed of the data that needs to be generated  , recieved , and processed (e.g., real-time)
-3. Variety : There are many data types varieties, you can see structured (database) , semi-tructured (JSON, XML), and unstructured data (images, videos , audio) 
-4. Veracity : The accuracy , quality, and trustworthiness 
-5. Value : the benefit of what you need , like you need to transform your big data to valuable business insights or you need to make them clean enough to train your AI agent
+- [What is Big Data?](#what-is-big-data)
+- [The 5 Vs of Big Data](#the-5-vs-of-big-data)
+- [The Medallion Architecture](#the-medallion-architecture)
+  - [🥉 Bronze Layer](#-bronze-layer)
+  - [🥈 Silver Layer](#-silver-layer)
+  - [🥇 Golden Layer](#-golden-layer)
+- [Common Big Data Architecture Terms](#common-big-data-architecture-terms)
 
-There are also many use cases that you would use big data, and depending on that specific use case you would probably use different big data tools. To understand which data you should use in each scenario, let's learn the three layers of big data itself, that you would usually find in many companies.
+---
 
-In this tutorial we will be following the medallion architecture which consists of bronze, silver, and golden layer. These layers are divided into three because they each serve a different purpose. Now let's go into details what each layer does. Please do note , that all of these layers are counted as the entire architecture of data warehouse or datalake.
+## What is Big Data?
 
-1. Bronze Layer
-Bronze layer is the first layer of big data , i'd like to call it as where 'dirty data are stored', dirty data in this context here means your data is very much raw and not processed yet. You usually use a storage with cheap prices like a bucket storage.
-because this is where you'd put your data in firstly. For example you have files with different formats such as JSON, CSV, etc, but in this layer you wouldnt need to think of formatting the data in the correct form yet, you only need to focus on storing it first.
-Example :
+At its core, **big data** is exactly what its name implies — a collection of enormous amounts of data in one space.
 
-2. Silver Layer
-Silver layer is basically where you will do the processing, where you'd clean the data , validate, and structured. The main purpose of this layer is to convert bronze layer data into a cleaned, filtered, and fixing null values. This layer organizes , your data. 
-If you've heard terms like ETL and ELT , this is where you'd do any of those activities. 
-Example : 
+When your data grows to a massive scale, traditional databases start to struggle. You might find yourself asking:
 
-3. Golden Layer (Single source of truth) 
-Golden layer is a layer you would put your very cleaned data in. Think of it as a dashboard data where you'd like to share with your stakeholder, the cleanest data that you can have in the data layers. It is basically your data summary that you'd like to tell other people.
-Example : 
+- *How do I maximize performance at this scale?*
+- *How do I process this data fast enough?*
 
-Now that we already know the layers of data , we can move to some other terms that are very common in big data. Like the architecture , please see the content below.
-1. Data Ingestion
+That's where **big data tools** come in. Instead of relying on conventional databases, these tools are built to handle large volumes of data with great speed and efficiency.
 
-2. Staging Area
- 
-3. Data Warehouse Layer ( Storage - Core )
-  
-4. Data Mart Layer ( Department Data )
-  
-5. Metadata Layer ( ) 
- 
+---
+
+## The 5 Vs of Big Data
+
+Not sure if your data qualifies as "big data"? A good rule of thumb is to evaluate it against the **5 Vs** — the key characteristics that define big data:
+
+| # | Characteristic | Description |
+|---|---------------|-------------|
+| 1 | **Volume** | The sheer size of the data — typically ranging from **terabytes to petabytes**, far exceeding what traditional storage systems are built for. |
+| 2 | **Velocity** | The speed at which data is generated, received, and needs to be processed — including **real-time** streaming scenarios. |
+| 3 | **Variety** | The diversity of data formats: **structured** (databases), **semi-structured** (JSON, XML), and **unstructured** (images, videos, audio). |
+| 4 | **Veracity** | The **accuracy, quality, and trustworthiness** of the data — how reliable is it? |
+| 5 | **Value** | The **business benefit** you extract from the data — whether that's generating insights, cleaning data for AI training, or powering dashboards. |
+
+> 💡 **Tip:** Whether your data qualifies as "big data" ultimately depends on your company's specific needs. Use the 5 Vs as a guide, not a strict rulebook.
+
+---
+
+## The Medallion Architecture
+
+Big data solutions are commonly organized into **three layers**, known as the **Medallion Architecture**. Each layer serves a distinct purpose in the journey from raw data to business value.
+```
+Raw Data In
+    │
+    ▼
+┌─────────────────────────────────────────────────────────┐
+│  🥉  BRONZE LAYER  — Raw / Unprocessed Storage          │
+│       (Cheap bucket storage: JSON, CSV, logs, etc.)     │
+└────────────────────────┬────────────────────────────────┘
+                         │
+                         ▼
+┌─────────────────────────────────────────────────────────┐
+│  🥈  SILVER LAYER  — Cleaned & Structured Data          │
+│       (ETL/ELT: filter, validate, fix nulls)            │
+└────────────────────────┬────────────────────────────────┘
+                         │
+                         ▼
+┌─────────────────────────────────────────────────────────┐
+│  🥇  GOLDEN LAYER  — Business-Ready Data                │
+│       (Dashboards, reports, stakeholder-facing)         │
+└─────────────────────────────────────────────────────────┘
+                         │
+                         ▼
+               Insights / AI / Reports
+```
+
+---
+
+### 🥉 Bronze Layer
+
+**The "dirty data" zone** — this is where your raw data lands first.
+
+- Data arrives in its **original, unprocessed form**
+- Multiple formats are accepted: CSV, JSON, Parquet, logs, etc.
+- Stored in **low-cost bucket storage** (e.g., object storage services)
+- **No transformation is done here** — the goal is simply to capture everything
+
+> Think of it as an inbox that accepts everything without judgment.
+
+---
+
+### 🥈 Silver Layer
+
+**The processing zone** — this is where data gets cleaned and structured.
+
+- **Validates** data quality and consistency
+- **Cleans** data: removes duplicates, fixes null values, standardizes formats
+- **Transforms** data using **ETL** (Extract, Transform, Load) or **ELT** (Extract, Load, Transform) pipelines
+- Outputs organized, reliable datasets ready for analysis
+
+> Think of it as the editorial desk — raw content gets reviewed, corrected, and structured.
+
+---
+
+### 🥇 Golden Layer *(Single Source of Truth)*
+
+**The presentation zone** — your cleanest, most reliable data lives here.
+
+- Contains **fully processed, business-ready data**
+- Used to power **dashboards, reports, and stakeholder presentations**
+- Serves as the **single source of truth** for your organization
+- Data at this layer is summarized, curated, and ready to tell a story
+
+> Think of it as the published report — polished, accurate, and ready to share.
+
+---
+
+## Common Big Data Architecture Terms
+
+Beyond the Medallion Architecture, there are several other terms and concepts you'll commonly encounter in big data systems:
+
+| Term | Description |
+|------|-------------|
+| **Data Ingestion** | The process of importing and loading raw data from various sources into your big data system. |
+| **Staging Area** | A temporary holding zone where data lands before it is validated or moved to its final destination. |
+| **Data Warehouse Layer** | The core storage and processing layer — the heart of your data architecture. |
+| **Data Mart Layer** | Department-specific subsets of a data warehouse, tailored to the needs of a specific team (e.g., marketing, finance). |
+| **Metadata Layer** | A layer that stores information *about* your data — schemas, lineage, definitions, and data cataloging. |
+
+---
+
+## 🚀 What's Next?
+
+Now that you understand the fundamentals, we'll dive deeper into specific big data tools — including Huawei's big data services — and how they map to the layers and concepts described above.
+
+
+---
+
+<div align="center">
+  <sub>Built with ❤️ for big data learners everywhere.</sub>
+</div>
