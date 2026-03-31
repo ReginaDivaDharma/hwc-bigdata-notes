@@ -179,6 +179,7 @@ A data lakehouse is an emerging hybrid solution that combines the best of both d
 |---|---|---|
 | Databricks | Databricks Lakehouse Platform | Cloud / SaaS |
 | AWS | AWS Lake Formation | Cloud |
+| Huawei Cloud | DataArts FabricSQL | Cloud |
 | Google Cloud | BigLake | Cloud |
 | Microsoft Azure | Microsoft Fabric | Cloud / SaaS |
 | Cloudera | Cloudera Data Platform (CDP) | On-Premise / Hybrid |
