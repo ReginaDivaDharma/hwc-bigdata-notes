@@ -171,7 +171,7 @@ Data warehouses are built to support data analytics, business intelligence (BI),
 
 ### 3. Data Lakehouses
 
-A data lakehouse is an emerging hybrid solution that combines the best of both data lakes and data warehouses — the cheap storage of a lake with the powerful querying capability of a warehouse — into a single platform, reducing system fragmentation. Lakehouses are a relatively recent development but are becoming increasingly popular because they eliminate the need to maintain two separate data systems.
+A data lakehouse is an emerging hybrid solution that combines the best of both data lakes and data warehouses , the cheap storage of a lake with the powerful querying capability of a warehouse into a single platform, reducing system fragmentation. Lakehouses are a relatively recent development but are becoming increasingly popular because they eliminate the need to maintain two separate data systems.
 
 **Examples:**
 
@@ -190,3 +190,7 @@ A data lakehouse is an emerging hybrid solution that combines the best of both d
 | IBM | IBM watsonx.data | Cloud / On-Premise |
 | Starburst | Starburst Galaxy | Cloud / SaaS |
 | Dremio | Dremio Lakehouse Platform | On-Premise / Cloud ||
+
+---
+
+In the next section we will talk about big data technology and tools.
