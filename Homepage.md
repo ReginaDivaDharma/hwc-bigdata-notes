@@ -115,18 +115,77 @@ Raw Data In
 
 ## Big Data Storage
 
-Beyond the Medallion Architecture, there are several other terms and concepts you'll commonly encounter in big data systems:
-
-a
----
-
-## 🚀 What's Next?
-
-Now that you understand the fundamentals, we'll dive deeper into specific big data tools — including Huawei's big data services — and how they map to the layers and concepts described above.
-
+Beyond the Medallion Architecture, there are several other terms and concepts you'll commonly encounter in big data systems, especially around data storage itself. According to IBM, big data storage can be divided into three main types.
 
 ---
 
-<div align="center">
-  <sub>Built with ❤️ for big data learners everywhere.</sub>
-</div>
+### 1. Data Lakes
+
+A data lake is a low-cost storage environment designed to handle massive amounts of raw structured or unstructured data. You don't need to clean the data yet, so it is still in its native format. This is ideal where volume, variety, and velocity are high, and performance or quality is not a priority yet. Data lakes prioritize flexibility and low cost, making them ideal for storing vast amounts of raw data.
+
+Data lakes are commonly used to support AI training, machine learning, and big data analytics. They can also serve as general-purpose spaces for all big data, which can be moved from the lake to different applications as needed.
+
+**Cloud Examples:**
+
+| Vendor | Product / Service | Deployment |
+|---|---|---|
+| AWS | Amazon S3 | Cloud |
+| Microsoft Azure | Azure Data Lake Storage (ADLS) | Cloud |
+| Google Cloud | Cloud Storage | Cloud |
+| Huawei Cloud | Object Storage Service (OBS) | Cloud / Server |
+| Oracle | Oracle Object Storage | Cloud |
+| MinIO | MinIO | On-Premise / Self-Hosted |
+| Apache | Apache Hadoop HDFS | On-Premise / Self-Hosted |
+| Dell | Dell ECS (Elastic Cloud Storage) | On-Premise / Hybrid |
+| IBM | IBM Cloud Object Storage | Cloud / On-Premise |
+| Alibaba Cloud | Alibaba OSS (Object Storage Service) | Cloud |
+
+---
+
+### 2. Data Warehouses
+
+Data warehouses are built to support data analytics, business intelligence (BI), and data science efforts. They aggregate data from many sources into a central hub. Because warehouses enforce a strict schema, storage costs can be high. Rather than being a general-purpose big data storage solution, warehouses are mainly used to make a specific subset of big data readily available to business users for BI and data analysis. Data warehouses focus on structure and speed, providing highly efficient querying for formal reporting.
+
+**Cloud Examples:**
+
+| Vendor | Product / Service | Deployment |
+|---|---|---|
+| AWS | Amazon Redshift | Cloud |
+| Google Cloud | BigQuery | Cloud |
+| Microsoft Azure | Azure Synapse Analytics | Cloud |
+| Huawei Cloud | Data Warehouse Service (DWS) | Cloud / Server |
+| Snowflake | Snowflake Data Warehouse | Cloud / SaaS |
+| Oracle | Oracle Exadata / Autonomous Data Warehouse | On-Premise / Cloud |
+| Greenplum | Greenplum Database | On-Premise / Hybrid |
+| IBM | IBM Db2 Warehouse | On-Premise / Cloud |
+| Teradata | Teradata Vantage | On-Premise / Cloud |
+| SAP | SAP BW/4HANA | On-Premise / Cloud |
+| Vertica | Vertica Analytics Platform | On-Premise / Cloud |
+| ClickHouse | ClickHouse | On-Premise / Cloud / SaaS |
+| Alibaba Cloud | AnalyticDB | Cloud |
+
+
+> **Bonus — Data Marts:** A data mart is essentially a smaller version of a data warehouse. It stores cleaned, structured data but serves only one specific department (e.g., Marketing or Finance), whereas a data warehouse can serve the entire company or multiple departments simultaneously.
+
+---
+
+### 3. Data Lakehouses
+
+A data lakehouse is an emerging hybrid solution that combines the best of both data lakes and data warehouses — the cheap storage of a lake with the powerful querying capability of a warehouse — into a single platform, reducing system fragmentation. Lakehouses are a relatively recent development but are becoming increasingly popular because they eliminate the need to maintain two separate data systems.
+
+**Cloud Examples:**
+
+| Vendor | Product / Service | Deployment |
+|---|---|---|
+| Databricks | Databricks Lakehouse Platform | Cloud / SaaS |
+| AWS | AWS Lake Formation | Cloud |
+| Google Cloud | BigLake | Cloud |
+| Microsoft Azure | Microsoft Fabric | Cloud / SaaS |
+| Cloudera | Cloudera Data Platform (CDP) | On-Premise / Hybrid |
+| Snowflake | Snowflake (with Iceberg Tables) | Cloud / SaaS |
+| Apache | Apache Iceberg + Spark | On-Premise / Self-Hosted |
+| Apache | Apache Hudi | On-Premise / Self-Hosted |
+| Delta Lake (Linux Foundation) | Delta Lake | On-Premise / Self-Hosted |
+| IBM | IBM watsonx.data | Cloud / On-Premise |
+| Starburst | Starburst Galaxy | Cloud / SaaS |
+| Dremio | Dremio Lakehouse Platform | On-Premise / Cloud ||
