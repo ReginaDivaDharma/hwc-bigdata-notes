@@ -125,7 +125,7 @@ A data lake is a low-cost storage environment designed to handle massive amounts
 
 Data lakes are commonly used to support AI training, machine learning, and big data analytics. They can also serve as general-purpose spaces for all big data, which can be moved from the lake to different applications as needed.
 
-**Cloud Examples:**
+**Examples:**
 
 | Vendor | Product / Service | Deployment |
 |---|---|---|
@@ -146,7 +146,7 @@ Data lakes are commonly used to support AI training, machine learning, and big d
 
 Data warehouses are built to support data analytics, business intelligence (BI), and data science efforts. They aggregate data from many sources into a central hub. Because warehouses enforce a strict schema, storage costs can be high. Rather than being a general-purpose big data storage solution, warehouses are mainly used to make a specific subset of big data readily available to business users for BI and data analysis. Data warehouses focus on structure and speed, providing highly efficient querying for formal reporting.
 
-**Cloud Examples:**
+**Examples:**
 
 | Vendor | Product / Service | Deployment |
 |---|---|---|
@@ -173,7 +173,7 @@ Data warehouses are built to support data analytics, business intelligence (BI),
 
 A data lakehouse is an emerging hybrid solution that combines the best of both data lakes and data warehouses — the cheap storage of a lake with the powerful querying capability of a warehouse — into a single platform, reducing system fragmentation. Lakehouses are a relatively recent development but are becoming increasingly popular because they eliminate the need to maintain two separate data systems.
 
-**Cloud Examples:**
+**Examples:**
 
 | Vendor | Product / Service | Deployment |
 |---|---|---|
